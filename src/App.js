@@ -8,6 +8,8 @@ import { PageNotFound } from './components/PageNotFound';
 import { Products } from './components/Products';
 import { FeaturedProduct } from './components/FeaturedProduct';
 import { NewProduct } from './components/NewProduct';
+import { Users } from './components/Users';
+import { UserDetail } from './components/UserDetail';
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
           <Route index element={<FeaturedProduct />} />
           <Route path='featured' element={<FeaturedProduct />} />
           <Route path='new' element={<NewProduct />} />
+        </Route>
+        <Route path='users' element={<Users />}>
+          <Route path=':id' element={<UserDetail />} />
         </Route>
         <Route path='*' element={<PageNotFound />} />
       </Routes>
